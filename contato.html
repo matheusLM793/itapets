@@ -1,55 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contato - ItaPets</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Contato - ItaPets</title>
-</head>
+  <body>
+    <header>
+      <h1>ItaPets</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Produtos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
 
-<body>
+    <main>
+      <h2>Fale Conosco</h2>
+      <p>Envie seus comentários sobre o site.</p>
 
-  <header>
-    <h1>ItaPets</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Produtos</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+      <form
+        action="https://formsubmit.co/matheussantosjesus126@gmail.com"
+        method="post"
+      >
+        <p>
+          <label for="name">Nome:</label><br />
+          <input type="text" id="name" name="name" required />
+        </p>
 
-  <main>
-    <h2>Fale Conosco</h2>
-    <p>Envie seus comentários sobre o site.</p>
+        <p>
+          <label for="email">Email:</label><br />
+          <input type="email" id="email" name="email" required />
+        </p>
 
-    <form action="https://formsubmit.co/matheussantosjesus126@gmail.com" method="post">
-      <p>
-        <label for="name">Nome:</label><br>
-        <input type="text" id="name" name="name" required>
-      </p>
+        <p>
+          <label for="number">Telefone:</label><br />
+          <input type="tel" id="number" name="number" />
+        </p>
 
-      <p>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required>
-      </p>
+        <p>
+          <label for="comentario">Comentário:</label><br />
+          <textarea
+            id="comentario"
+            name="comentario"
+            rows="5"
+            cols="40"
+          ></textarea>
+        </p>
 
-      <p>
-        <label for="number">Telefone:</label><br>
-        <input type="tel" id="number" name="number">
-      </p>
-
-      <p>
-        <label for="comentario">Comentário:</label><br>
-        <textarea id="comentario" name="comentario" rows="5" cols="40"></textarea>
-      </p>
-
-      <p>
-        <input type="submit" value="Enviar">
-      </p>
-
-    </form>
-  </main>
-
-</body>
-
+        <p>
+          <input type="submit" value="Enviar" />
+        </p>
+      </form>
+    </main>
+  </body>
 </html>
