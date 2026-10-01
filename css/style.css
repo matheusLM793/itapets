@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* ---------- 1. TAGS GERAIS ---------- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.6;
+  color: #1f2937;
+  background-color: #f3f6f8;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; margin-bottom: 1.25rem; color: #0f766e; }
+h3 { font-size: 1.15em; }
+h4 { font-size: 1em; }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a:link,
+a:visited {
+  color: #0f766e;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+/* ---------- 2. LAYOUT (header, nav, main, footer) ---------- */
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background-color: #0f766e;
+}
+
+header h1 { color: #ffffff; }
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a:link,
+nav a:visited {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+nav a:hover,
+nav a:active {
+  color: #fde68a;
+  text-decoration: none;
+}
+
+main {
+  max-width: 68.75em;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+footer {
+  padding: 1.25rem;
+  text-align: center;
+  color: #ffffff;
+  background-color: #134e4a;
+}
+
+/* ---------- 3. PÁGINA DE PRODUTOS (index) ---------- */
+
+/* main que contém article = lista de produtos */
+main:has(> article) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1.5rem;
+}
+
+main:has(> article) > h2 {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+article {
+  overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 0.75em;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+article a:link,
+article a:visited {
+  display: block;
+  color: inherit;
+}
+
+article a:hover,
+article a:active {
+  text-decoration: none;
+}
+
+article figure { margin: 0; }
+
+article img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background-color: #ffffff;
+}
+
+figcaption {
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ---------- 4. PÁGINA DE PRODUTO ---------- */
+
+/* filhos diretos de main: só existem nas páginas de produto */
+main > figure {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+main > figure img {
+  max-width: 20em;
+  width: 100%;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 0.75em;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+main > h3,
+main > h4 {
+  margin-bottom: 0.75rem;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.75rem 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background-color: #ffffff;
+  border-radius: 0.75em;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+dt {
+  font-weight: 700;
+  color: #0f766e;
+}
+
+/* primeiro dd = preço */
+dd:first-of-type {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: #b45309;
+}
+
+main > a:link,
+main > a:visited,
+main > p > a:link,
+main > p > a:visited {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  color: #ffffff;
+  font-weight: 600;
+  background-color: #0f766e;
+  border-radius: 0.5em;
+}
+
+main > a:hover,
+main > a:active,
+main > p > a:hover,
+main > p > a:active {
+  background-color: #115e59;
+  text-decoration: none;
+}
+
+/* ---------- 5. CONTATO (formulário) ---------- */
+
+form {
+  margin: 0 auto;
+  max-width: 34em;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 0.75em;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+label {
+  display: block;
+  font-weight: 600;
+}
+
+fieldset {
+  margin-bottom: 1rem;
+  border: 0;
+}
+
+legend {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* rótulos dos radios ficam ao lado da bolinha */
+fieldset label {
+  display: inline-block;
+  margin-right: 1.25rem;
+  font-weight: 400;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  display: block;
+  margin-bottom: 1rem;
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.6em 0.8em;
+  font: inherit;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5em;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+  outline: 2px solid #0f766e;
+  border-color: #0f766e;
+}
+
+input[type="radio"] {
+  margin-right: 0.4rem;
+  accent-color: #0f766e;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  padding: 0.6em 1.4em;
+  font: inherit;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #0f766e;
+  border: 0;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+input[type="reset"] { background-color: #6b7280; }
+
+input[type="submit"]:hover { background-color: #115e59; }
+input[type="reset"]:hover { background-color: #4b5563; }
+
+/* ---------- 6. RESPONSIVO (media queries) ---------- */
+
+@media (max-width: 48em) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  main:has(> article) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 30em) {
+  main:has(> article) {
+    grid-template-columns: 1fr;
+  }
+
+  dl {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  dd { margin-bottom: 0.75rem; }
+
+  h2 { font-size: 1.5em; }
+}
